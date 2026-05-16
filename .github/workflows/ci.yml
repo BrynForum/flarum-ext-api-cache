@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  php:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer:v2
+      - run: composer validate --strict
+      - run: composer install --no-progress --prefer-dist
+
+  js:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: js
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install --no-fund --no-audit
+      - run: npm run build
+      - name: Verify js/dist is up to date
+        run: |
+          if [[ -n "$(git status --porcelain dist/)" ]]; then
+            echo "::error::js/dist is stale — run 'cd js && npm run build' locally and commit the result"
+            git --no-pager diff dist/
+            exit 1
+          fi
