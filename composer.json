@@ -1,0 +1,40 @@
+{
+    "name": "brynforum/api-cache",
+    "description": "Server-side response caching for Flarum's API. Configure regex-pattern rules with per-rule TTLs to short-circuit expensive endpoints (top-poster widgets, statistics aggregations, etc.) before they touch the database.",
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^1.8.0",
+        "predis/predis": "^2.2"
+    },
+    "authors": [
+        {
+            "name": "BrynForum",
+            "email": "hello@brynforum.com",
+            "homepage": "https://brynforum.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "BrynForum\\ApiCache\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "API Cache",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-bolt",
+                "backgroundColor": "#5e81ac",
+                "color": "#fff"
+            }
+        },
+        "flarum-cli": {
+            "modules": {
+                "admin": true,
+                "forum": false
+            }
+        }
+    },
+    "minimum-stability": "stable"
+}

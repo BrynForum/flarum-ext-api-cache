@@ -1,0 +1,13 @@
+{
+    "name": "@brynforum/api-cache",
+    "private": true,
+    "scripts": {
+        "build": "webpack --mode production",
+        "dev": "webpack --mode development --watch"
+    },
+    "devDependencies": {
+        "flarum-webpack-config": "^2.0.0",
+        "webpack": "^5.97.1",
+        "webpack-cli": "^5.1.4"
+    }
+}
