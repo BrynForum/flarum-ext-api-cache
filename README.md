@@ -1,8 +1,8 @@
 # brynforum/api-cache
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/brynforum/api-cache.svg)](https://packagist.org/packages/brynforum/api-cache)
-[![Total Downloads](https://img.shields.io/packagist/dt/brynforum/api-cache.svg)](https://packagist.org/packages/brynforum/api-cache)
-[![License](https://img.shields.io/packagist/l/brynforum/api-cache.svg)](LICENSE)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/brynforum/api-cache.svg?cacheSeconds=3600)](https://packagist.org/packages/brynforum/api-cache)
+[![Total Downloads](https://img.shields.io/packagist/dt/brynforum/api-cache.svg?cacheSeconds=3600)](https://packagist.org/packages/brynforum/api-cache)
+[![License](https://img.shields.io/packagist/l/brynforum/api-cache.svg?cacheSeconds=3600)](LICENSE)
 
 A [Flarum](https://flarum.org) extension that adds **server-side response caching** to the JSON:API. Configure regex-pattern rules with per-rule TTLs to short-circuit expensive endpoints — top-poster widgets, statistics aggregations, public discussion lists — before they touch the database.
 
